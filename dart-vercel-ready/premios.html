@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premios - DART Pintura</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .premios-hero {
+            padding: 12rem 5% 5rem;
+            text-align: center;
+        }
+        .premios-list {
+            max-width: 800px;
+            margin: 0 auto 5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .premio-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 20px;
+            transition: var(--transition);
+        }
+        .premio-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .premio-year {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.2);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+            margin-bottom: 0.5rem;
+        }
+        .premio-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-heading);
+        }
+        .premio-org {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+        }
+        .premios-subtitle {
+            color: var(--secondary-color);
+            margin-bottom: 4rem;
+            font-size: 1.2rem;
+        }
+        .premio-destacado {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 215, 0, 0.05) 100%) !important;
+            border: 1px solid rgba(255, 215, 0, 0.6) !important;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            transform: scale(1.02);
+        }
+        .premio-destacado::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -150%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to right,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                rgba(255, 215, 0, 0.2),
+                transparent
+            );
+            transform: rotate(45deg);
+            animation: shine-gold 3s infinite;
+        }
+        .premio-destacado .premio-year {
+            color: rgba(255, 215, 0, 0.3) !important;
+            -webkit-text-stroke: 1px rgba(255, 215, 0, 0.5) !important;
+        }
+        .premio-destacado .premio-title {
+            color: #fff !important;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        @keyframes shine-gold {
+            0% { left: -150%; }
+            20% { left: 150%; }
+            100% { left: 150%; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <div class="noise"></div>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">DART.</a>
+        <a href="tel:+34667569104" class="btn-primary">667 569 104</a>
+    </nav>
+
+    <main>
+        <section class="premios-hero">
+            <h1 class="section-title">Nuestros Premios</h1>
+            <p class="premios-subtitle">Reconocimientos otorgados por Procolor a nivel nacional en España.</p>
+        </section>
+
+        <section class="container">
+            <div class="premios-list">
+                <div class="premio-item premio-destacado">
+                    <div class="premio-year">2025</div>
+                    <div class="premio-title">Mejor Pintor de España</div>
+                    <div class="premio-org">Procolor Nacional</div>
+                </div>
+                <div class="premio-item">
+                    <div class="premio-year">2025</div>
+                    <div class="premio-title">Finalista · Interior Residencial</div>
+                    <div class="premio-org">Procolor Nacional</div>
+                </div>
+                <div class="premio-item">
+                    <div class="premio-year">2023</div>
+                    <div class="premio-title">Mejor Pintor del Año · Rehabilitación Integral</div>
+                    <div class="premio-org">Procolor Nacional</div>
+                </div>
+                <div class="premio-item">
+                    <div class="premio-year">2021</div>
+                    <div class="premio-title">Mejor Pintor del Año · Interior Residencial</div>
+                    <div class="premio-org">Procolor Nacional</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 5rem;">
+                <a href="index.html" class="btn-outline large">Volver al Inicio</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">DART.</div>
+                <div class="footer-links">
+                    <p>Valencia, España</p>
+                    <a href="tel:+34667569104">667 569 104</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DART Pintura. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Lenis for smooth scrolling -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smooth: true
+        });
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Custom Cursor Logic
+        const cursor = document.querySelector('.cursor');
+        const interactiveElements = document.querySelectorAll('a, button, .premio-item');
+
+        document.addEventListener('mousemove', (e) => {
+            gsap.to(cursor, {
+                x: e.clientX,
+                y: e.clientY,
+                duration: 0.1,
+                ease: "power2.out"
+            });
+        });
+
+        interactiveElements.forEach((el) => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('active');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
